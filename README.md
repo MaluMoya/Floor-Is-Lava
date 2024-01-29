@@ -30,7 +30,7 @@ The approach for this game is to use classes and orient the code to objects.
 
 My project is divided in 3 smaller tasks. I used trello to organize and keep track of my project. I also used a wireframe to have a better ideo of how my game will look like.
 
-Link of published project: "Work in progress"
+Link of published project: https://malumoya.github.io/Floor-Is-Lava/
 
 LINK of slides for the presentation: "Work in progress"
 
