@@ -21,7 +21,7 @@ The approach for this game is to use classes and orient the code to objects.
 - Have a score
 - have a timer
 
-## backlog
+## Backlog
 
 - Add more characters (select character at the beggining)
 - add more levels

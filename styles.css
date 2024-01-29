@@ -1,0 +1,6 @@
+* {
+    /*We use the universal selector to remove the default settings of browser*/
+    margin: 0;
+    padding :0;
+    font-family: arial;
+}
