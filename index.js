@@ -4,8 +4,18 @@ console.log ("Index Js is working!")
 
 let divGameBoard = document.getElementById ("div-board");
 
-
 /*--------------------------------- FUNCTIONS ---------------------------------*/
+
+
+function randomDice (){
+    //Create random Number:
+    let randomNumber = Math.floor(Math.random()*6) +1;
+    //Change image:
+    document.querySelector(".img1").setAttribute("src", "./Assets/images/dice"+ randomNumber +".png");
+}
+
+randomDice();
+
 
 
 function addGrid (){
@@ -37,18 +47,3 @@ function addGrid (){
 }
 
 addGrid();
-
-
-
-function randomDice (random){
-    //Create random Number
-    let randomNumber = Math.floor(Math.random()*6) +1;
-    //Change image 
-    document.querySelector(".dice1").setAttribute("src", "images/dice"+ randomNumber+".png");
-}
-
-
-
-
-
-
