@@ -69,12 +69,20 @@ body {
 
 
 
-/*--------------------------- ELEMENTS ----------------------------*/
+/*--------------------------- ELEMENTS 1st DIV ----------------------------*/
 
 #title {
     font-family: 'Rubik Glitch Pop', system-ui;
     font-size: 20px;
 }
+
+/*------------------------ ELEMENTS 2nd DIV - DICE ----------------------------*/
+
+.img1 {
+    width: 20%;
+}
+
+/*---------------------- ELEMENTS 3rd DIV - GameBoard ----------------------------*/
 
 .div-grid {
     width: 100%;
@@ -91,8 +99,13 @@ body {
     background-color: black;
 }
 
-.img1 {
-    width: 20%;
-}
+/*--------------------------- PLAYER ELEMENT ----------------------------*/
 
+#player {
+    
+    background-color: aqua;
+    width: 10px;
+    height: 10px;
+
+}
 
