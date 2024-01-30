@@ -1,26 +1,42 @@
 console.log ("Index Js is working!")
 
-/*---------------------------------  DOM ---------------------------------*/
+/*---------------------------------  DOM  and VARIABLES ---------------------------------*/
 
 let divGameBoard = document.getElementById ("div-board");
+let gameLives = 3;
+
+const boardWidth = divGameBoard.getBoundingClientRect().width;
+const boardHeight = divGameBoard.getBoundingClientRect().height;
+
+//const game = new Game(gameLives);
 
 /*--------------------------------- FUNCTIONS ---------------------------------*/
+
+let randomNum = 0;
 
 
 function randomDice (){
     //Create random Number:
     let randomNumber = Math.floor(Math.random()*6) +1;
     //Change image:
-    document.querySelector(".img1").setAttribute("src", "./Assets/images/dice"+ randomNumber +".png");
+    randomNum = document.querySelector(".img1").setAttribute("src", "./Assets/images/dice"+ randomNumber +".png");
+
+    if (randomNum === 1){
+
+    }
 }
+
 
 randomDice();
 
-
+//Leave empty array
+let array = [];
 
 function addGrid (){
     for (let i = 0; i < 8; i++){
 
+        //push elements from first loop
+        array.push([]);
         //We do a for loop inside of the other to create and 8x8 grid
 
         for (let j = 0; j < 8; j++){
@@ -29,6 +45,9 @@ function addGrid (){
         const divGrid = document.createElement("div")
         divGrid.classList.add("div-grid")
         divGameBoard.appendChild(divGrid)
+
+        //hacemos push a la fila que se creo para crear las columnas
+        array[i].push(divGrid);
 
         //Add style/Column & Rows
         //j+1 es porque array empieza desde 0 pero grid empieza desde 1
@@ -43,7 +62,20 @@ function addGrid (){
                 divGrid.classList.add("black");
             }      
         }
+
     }
 }
 
+
 addGrid();
+
+const newGame = new Game ();
+
+
+document.addEventListener("keydown", (event) => {
+    console.log(event);
+    if (!newGame.gameOver) {
+        newGame.player.move(event.key);
+    }
+})
+
