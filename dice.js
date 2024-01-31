@@ -40,7 +40,7 @@ class Dice {
         console.log("Start button pressed");
         this.startButton.onclick = () => {
         this.startCountdown();
-        newGame = new Game ();
+        newGame = new Game(3);
         };
     }
     

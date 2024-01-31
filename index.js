@@ -5,6 +5,8 @@ console.log ("Index Js is working!")
 //DIV BOARD
 let divGameBoard = document.getElementById ("div-board");
 
+//Game variables:
+
 //DICE: 
 const dice = new Dice();
 dice.clickStart()
@@ -53,6 +55,39 @@ function addGrid (){
 }
 
 addGrid();
+
+/*
+let gameOver = false;
+
+function gameLoop() {
+    if (!newGame.gameOver) {
+
+
+        /*
+        game.player.crashTest()
+        if (game.frames % enemyCreationFrame === 0) {
+            game.enemies.push(new Enemy(enemyVelocity));
+            console.log(game.enemies);
+        }
+        if (game.frames % scoreIncrementFrame === 0) {
+            game.score++;
+            game.updateScore();
+        }
+        game.enemies.forEach((enemy) => {
+            enemy.move()
+            enemy.checkForBoundaries()
+        })
+
+    } else {
+        newGame.player.playerElement.remove();
+        //endView.style.display = "flex"; // We can set it to flex or block
+    }
+}
+
+gameLoop(); 
+*/
+
+
 
 /*--------------------------------- EVENT-LISTENERS ---------------------------------*/
 
