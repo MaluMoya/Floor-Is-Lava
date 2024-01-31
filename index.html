@@ -16,12 +16,17 @@
     <div id="game-view">
         <div class="div" id="div-title">
             <h1 id="title">Floor is Lava</h1> 
+            <p>Lives: <span id="lives">0</span></p>
         </div>
+        
         <div class="div" id="div-button">
-            <img class="dice1" src="">
+            <div id="time">10</div>
+            <img class="img1" src="./Assets/images/dice6.png">
             <button id="start-btn">Start</button>
+            <button id="throw-dice">Throw Dice!!</button>
         </div>
         <div id="div-board"> 
+        </div>
         </div>     
     </div>
 
@@ -36,6 +41,8 @@
 
 
     <!--Don't forget to use the ./ for github to find the file on the same folder.-->
+    <script src="./gameBoard.js"></script>
+    <script src="./dice.js"></script>
     <script src="./fireEnemy.js"></script>
     <script src="./soloPlayer.js"></script>
     <script src="./furniture.js"></script>
