@@ -16,7 +16,7 @@ class Game {
 
     }
     updateLives() {
-        document.querySelector("#lives").innerText = this.lives;
+        document.getElementById("lives").innerText = this.lives;
         if (this.lives <= 0) {
             this.gameOver = true;
         }

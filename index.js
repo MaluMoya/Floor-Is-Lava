@@ -13,7 +13,7 @@ dice.clickStart()
 dice.clickDice();
 
 //NEW GAME: 
-let newGame ;
+let newGame;
 
 /*--------------------------------- FUNCTIONS ---------------------------------*/
 

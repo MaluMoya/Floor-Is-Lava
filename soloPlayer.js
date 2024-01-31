@@ -40,9 +40,7 @@ class Player {
                 this.x += 1
                 break;
         };
-        
-
-
+          
         this.checkForBoundaries()
         this.updatePlayerPosition();
         this.burntTest()
