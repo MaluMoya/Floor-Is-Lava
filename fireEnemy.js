@@ -29,6 +29,7 @@ class Lava {
         this.x = randomPositionX
         this.y = randomPositionY
 
-        
     }
+        
+    
 }
