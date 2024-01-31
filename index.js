@@ -4,30 +4,12 @@ console.log ("Index Js is working!")
 
 let divGameBoard = document.getElementById ("div-board");
 let gameLives = 3;
-
-const boardWidth = divGameBoard.getBoundingClientRect().width;
-const boardHeight = divGameBoard.getBoundingClientRect().height;
-
+const dice = new Dice();
+dice.clickStart()
+dice.clickDice();
 //const game = new Game(gameLives);
 
 /*--------------------------------- FUNCTIONS ---------------------------------*/
-
-let randomNum = 0;
-
-
-function randomDice (){
-    //Create random Number:
-    let randomNumber = Math.floor(Math.random()*6) +1;
-    //Change image:
-    randomNum = document.querySelector(".img1").setAttribute("src", "./Assets/images/dice"+ randomNumber +".png");
-
-    if (randomNum === 1){
-
-    }
-}
-
-
-randomDice();
 
 //Leave empty array
 let array = [];
@@ -66,10 +48,13 @@ function addGrid (){
     }
 }
 
-
+dice.clickStart();
 addGrid();
 
 const newGame = new Game ();
+
+
+/*--------------------------------- EVENT-LISTENERS ---------------------------------*/
 
 
 document.addEventListener("keydown", (event) => {
