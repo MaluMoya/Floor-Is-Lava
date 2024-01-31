@@ -24,7 +24,6 @@ class Dice {
                 //Esto cambia el texto del div del html en cada intervalo
                 
             } else {
-                console.log ('Why ?')
                 clearInterval(intervalId)
                 this.startButton.style.visibility = 'visible'
                 this.counter = 10;

@@ -3,8 +3,11 @@ console.log ("Index Js is working!")
 /*---------------------------------  DOM  and VARIABLES ---------------------------------*/
 
 let divGameBoard = document.getElementById ("div-board");
-let gameLives = 3;
+
+
 const dice = new Dice();
+
+
 dice.clickStart()
 dice.clickDice();
 //const game = new Game(gameLives);

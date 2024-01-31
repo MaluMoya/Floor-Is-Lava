@@ -37,6 +37,8 @@ body {
 }
 
 #div-title {
+    display: flex;
+    flex-direction: column;
     margin-top: 20px;
     margin-left: 20px;
     /*Same as grid column: span 2*/
@@ -107,9 +109,28 @@ body {
 
 #player {
     
+    background-color: green;
+    width: 10px;
+    height: 10px;
+
+}
+
+/*--------------------------- LAVA ELEMENT ----------------------------*/
+
+.lava {
+    
     background-color: brown;
     width: 10px;
     height: 10px;
 
 }
 
+/*--------------------------- LAVA ELEMENT ----------------------------*/
+
+.furniture {
+    
+    background-color: blue;
+    width: 10px;
+    height: 10px;
+
+}
