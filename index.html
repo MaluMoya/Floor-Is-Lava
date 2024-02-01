@@ -14,10 +14,15 @@
 <body>
 <!-- Toast Card - hidden by default using CSS -->
     <div id="game-view">
+        <div id="game-over">
+            <span id="toast-message">Game Over!</span>
+            <button id="restart-game">Restart Game</button>
+
+        </div>
         <div class="div" id="div-title">
             <h1 id="title">Floor is Lava</h1> 
             <p>Lives: <span id="lives">3</span></p>
-            <p>Moves: <span id="moves-left">0</span></p>
+            <p>MOVES LEFT: <span id="remaining-moves">0</span></p>
         </div>
         
         <div class="div" id="div-button">
@@ -36,11 +41,6 @@
 
 
 <!-- Toast Card - hidden by default using CSS -->
-    <div id="toast" class="view">
-        <p class="gameOver">Game Over!</p>
-    </div>
-
-
     <!--Don't forget to use the ./ for github to find the file on the same folder.-->
     <script src="./gameBoard.js"></script>
 

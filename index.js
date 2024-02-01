@@ -4,7 +4,8 @@ console.log ("Index Js is working!")
 
 //DIV BOARD
 let divGameBoard = document.getElementById ("div-board");
-
+let divToast = document.getElementById("game-over");
+let refreshButton = document.querySelector('#restart-game');
 //Game variables:
 
 //DICE: 
@@ -56,46 +57,24 @@ function addGrid (){
 
 addGrid();
 
-/*
-let gameOver = false;
-
-function gameLoop() {
-    if (!newGame.gameOver) {
-
-
-        /*
-        game.player.crashTest()
-        if (game.frames % enemyCreationFrame === 0) {
-            game.enemies.push(new Enemy(enemyVelocity));
-            console.log(game.enemies);
-        }
-        if (game.frames % scoreIncrementFrame === 0) {
-            game.score++;
-            game.updateScore();
-        }
-        game.enemies.forEach((enemy) => {
-            enemy.move()
-            enemy.checkForBoundaries()
-        })
-
-    } else {
-        newGame.player.playerElement.remove();
-        //endView.style.display = "flex"; // We can set it to flex or block
-    }
-}
-
-gameLoop(); 
-*/
-
-
+const refreshPage = () => {
+    location.reload();
+  }
+  
+  refreshButton.addEventListener('click', refreshPage)
 
 /*--------------------------------- EVENT-LISTENERS ---------------------------------*/
+
+
 
 
 document.addEventListener("keydown", (event) => {
     console.log(event);
     if (!newGame.gameOver) {
         newGame.player.move(event.key);
+    }
+    else {
+        divToast.style.visibility = "visible";
     }
 })
 

@@ -16,6 +16,8 @@ body {
 
 
 #game-view {
+    /*If we want to make child elements absolute, we need to set it to relative*/
+    position: relative;
     width: 80%;
     height: 100vh;
     display: grid;
@@ -23,6 +25,10 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     background-color: black;
+
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -36,40 +42,67 @@ body {
     justify-content: center;
 }
 
+#game-over {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 40%;
+    background-color: black;
+    position: absolute;
+    /*This 2 properties are meant for positioning:*/
+    top: 25%;
+    left: 25%;
+    font-size: 20px;
+    color: white;
+
+}
+
 #div-title {
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
-    margin-left: 20px;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding: 10px 20px;
     /*Same as grid column: span 2*/
     grid-column-start: span 2;
     grid-column-end: auto; 
+
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
     background-color: brown;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #div-button {
-    margin-left: 20px;
-    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-bottom: 30px;
     grid-area: 2 / 1 / 3 / 3;
     background-color: antiquewhite;
     order: 1;
     display: flex;
     flex-direction: column;
+
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: brown;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #div-board {
     display: grid;
     grid-template: repeat(8, 1fr) / repeat(8, 1fr);
-    margin: 100px 20px 100px 0;
+    margin: 100px 30px 100px 0;
     grid-area: 1 / 3 / 3 / 5;
-    background-color: red;
+    background-color: brown;
     gap: 1px;
+
 }
-
-/*------------------------- GRID GAME ------------------------------*/
-
-
-
 
 /*--------------------------- ELEMENTS 1st DIV ----------------------------*/
 
@@ -78,10 +111,41 @@ body {
     font-size: 20px;
 }
 
+p {
+    width: 150px;
+    height: 30px;
+}
+
 /*------------------------ ELEMENTS 2nd DIV - DICE ----------------------------*/
 
 .img1 {
     width: 20%;
+}
+
+#start-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: brown;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#throw-dice{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: brown;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -102,7 +166,6 @@ body {
     background-color: black;
 }
 
-/*--------------------------- PLAYER ELEMENT ----------------------------*/
 
 #player {
     
@@ -112,8 +175,6 @@ body {
 
 }
 
-/*--------------------------- LAVA ELEMENT ----------------------------*/
-
 .lava {
     
     background-color: brown;
@@ -122,7 +183,6 @@ body {
 
 }
 
-/*--------------------------- LAVA ELEMENT ----------------------------*/
 
 .furniture {
     
@@ -131,3 +191,5 @@ body {
     height: 10px;
 
 }
+
+

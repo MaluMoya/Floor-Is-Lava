@@ -14,17 +14,19 @@ class Game {
         this.spawnLava();         //Spawn (Poner huevos) lava and furniture 
         this.spawnFurniture();
 
+
     }
     updateLives() {
         document.getElementById("lives").innerText = this.lives;
         if (this.lives <= 0) {
             this.gameOver = true;
+            divToast.style.visibility = "visible";
         }
     }
     spawnLava(){
         //Create for loop to create as many lavas as the lavaenemies number per difficulty is set:
         for (let i = 1; i <= this.lavaEnemies; i++){
-
+            //furniture.cellFull(randomPositionX, randomPositionY);
             this.lavaArray.push(new Lava ());
         }
     }
@@ -34,5 +36,6 @@ class Game {
             this.furnitureArray.push(new Furniture ());
         }
     }
+
 
 }
