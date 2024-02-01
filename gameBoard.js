@@ -26,7 +26,6 @@ class Game {
     spawnLava(){
         //Create for loop to create as many lavas as the lavaenemies number per difficulty is set:
         for (let i = 1; i <= this.lavaEnemies; i++){
-            //furniture.cellFull(randomPositionX, randomPositionY);
             this.lavaArray.push(new Lava ());
         }
     }

@@ -1,6 +1,6 @@
 class Dice {
     constructor() {
-        this.counter = 20;
+        this.counter = 3;
 
         //Esto solo se ejecuta cuando empieza el juego:
         this.counterDice = this.randomDice();
@@ -46,7 +46,7 @@ class Dice {
                 gameOverToast.style.visibility = "visible";
                 clearInterval(intervalId)
                 this.startButton.style.visibility = "visible";
-                this.counter = 20;
+                this.counter = 10;
                 this.divTime.innerHTML = this.counter;
                 //showToast(divMessage)
             }
