@@ -52,7 +52,7 @@ class Player {
                     break;
             }
 
-            if (this.movesLeft === 1){
+            if (this.movesLeft === 1 || this.movesLeft === 0){
                dice.diceButton.style.visibility = "visible";
    
            }
@@ -107,6 +107,9 @@ class Player {
                 const Index = newGame.furnitureArray.indexOf(furniture);
 
                 newGame.furnitureArray.splice(Index, 1);
+            }
+            if (newGame.furnitureArray.length === 0){
+                youWonToast.style.visibility = "visible";
             }
 
 

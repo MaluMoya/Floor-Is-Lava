@@ -1,3 +1,6 @@
+@import "https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation";
+
+
 * {
     /*We use the universal selector to remove the default settings of browser*/
     margin: 0;
@@ -24,7 +27,7 @@ body {
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    background-color: black;
+    background: url("./Assets/images/lavaBackground.jpeg");
 
     border: none;
     border-radius: 5px;
@@ -42,23 +45,6 @@ body {
     justify-content: center;
 }
 
-#game-over {
-    visibility: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 50%;
-    height: 40%;
-    background-color: black;
-    position: absolute;
-    /*This 2 properties are meant for positioning:*/
-    top: 25%;
-    left: 25%;
-    font-size: 20px;
-    color: white;
-
-}
 
 #div-title {
     display: flex;
@@ -73,8 +59,6 @@ body {
     border: none;
     border-radius: 5px;
     font-size: 16px;
-    background-color: brown;
-    color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -107,11 +91,13 @@ body {
 /*--------------------------- ELEMENTS 1st DIV ----------------------------*/
 
 #title {
-    font-family: 'Rubik Glitch Pop', system-ui;
-    font-size: 20px;
+    text-align: center;
+    font-family: Rancho;
+    font-size: 80px;
 }
-
-p {
+#div-title p {
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 20px;
     width: 150px;
     height: 30px;
 }
@@ -190,6 +176,86 @@ p {
     width: 10px;
     height: 10px;
 
+}
+
+/*---------------------- Toasts GameOver / You're saved ----------------------------*/
+
+
+#game-over {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 40%;
+    background-color: black;
+    position: absolute;
+    /*This 2 properties are meant for positioning:*/
+
+    top: 25%;
+    left: 25%;
+
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 20px;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+#you-won {
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 40%;
+    background-color: black;
+    position: absolute;
+    /*This 2 properties are meant for positioning:*/
+    top: 25%;
+    left: 25%;
+
+    font-family: 'Maven Pro', sans-serif;
+    font-size: 20px;
+    color: white;
+
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+#restart-game-lose {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: brown;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#restart-game-won {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 auto;
+    margin-top: 20px;
+    background-color: brown;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 

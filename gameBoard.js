@@ -20,7 +20,7 @@ class Game {
         document.getElementById("lives").innerText = this.lives;
         if (this.lives <= 0) {
             this.gameOver = true;
-            divToast.style.visibility = "visible";
+            gameOverToast.style.visibility = "visible";
         }
     }
     spawnLava(){

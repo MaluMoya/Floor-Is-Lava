@@ -4,8 +4,10 @@ console.log ("Index Js is working!")
 
 //DIV BOARD
 let divGameBoard = document.getElementById ("div-board");
-let divToast = document.getElementById("game-over");
-let refreshButton = document.querySelector('#restart-game');
+let gameOverToast = document.getElementById("game-over");
+let youWonToast = document.getElementById("you-won");
+let refreshButtonLoser = document.querySelector('#restart-game-lose');
+let refreshButtonWinner = document.querySelector('#restart-game-won');
 //Game variables:
 
 //DICE: 
@@ -57,11 +59,18 @@ function addGrid (){
 
 addGrid();
 
-const refreshPage = () => {
+const refreshPageLoser = () => {
     location.reload();
   }
   
-  refreshButton.addEventListener('click', refreshPage)
+refreshButtonLoser.addEventListener('click', refreshPageLoser)
+
+const refreshPageWinner = () => {
+    location.reload();
+  }
+  
+refreshButtonWinner.addEventListener('click', refreshPageWinner)
+
 
 /*--------------------------------- EVENT-LISTENERS ---------------------------------*/
 
@@ -72,9 +81,6 @@ document.addEventListener("keydown", (event) => {
     console.log(event);
     if (!newGame.gameOver) {
         newGame.player.move(event.key);
-    }
-    else {
-        divToast.style.visibility = "visible";
     }
 })
 

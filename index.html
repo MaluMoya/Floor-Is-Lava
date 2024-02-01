@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Honk&family=Rubik+Glitch+Pop&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap" rel="stylesheet">
 
     <title>Floor is Lava</title>
 </head>
@@ -15,12 +18,18 @@
 <!-- Toast Card - hidden by default using CSS -->
     <div id="game-view">
         <div id="game-over">
-            <span id="toast-message">Game Over!</span>
-            <button id="restart-game">Restart Game</button>
+            <span class="toast-message">Game Over!</span>
+            <button id="restart-game-lose">Restart Game</button>
 
         </div>
+        <div id="you-won">
+            <span class="toast-message">You're SAVED!</span>
+            <button id="restart-game-won">Restart Game</button>
+
+        </div>
+
         <div class="div" id="div-title">
-            <h1 id="title">Floor is Lava</h1> 
+            <h1 id="title" class = "font-effect-fire-animation">Floor is Lava</h1> 
             <p>Lives: <span id="lives">3</span></p>
             <p>MOVES LEFT: <span id="remaining-moves">0</span></p>
         </div>
