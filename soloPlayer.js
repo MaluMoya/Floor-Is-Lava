@@ -7,6 +7,8 @@ class Player {
         this.updatePlayerPosition()
         this.xMax = 7;
         this.yMax = 7;
+        this.movesLeft = 0;
+        this.element = document.querySelector("#player");
     }
 
     updatePlayerPosition() {
@@ -25,29 +27,50 @@ class Player {
     }
     move(direction) {
 
-        console.log(direction)
-        switch (direction) {
-            case "ArrowUp":
-                this.y -= 1
-                break;
-            case "ArrowDown":
-                this.y += 1
-                break;
-            case "ArrowLeft":
-                this.x -= 1
-                break;
-            case "ArrowRight":
-                this.x += 1
-                break;
-        };
-        
+        if (this.movesLeft > 0) {
+            console.log(direction)
+            switch (direction) {
+                case "ArrowUp":
+                    this.y -= 1
+                    this.movesLeft--;
+                    dice.movesLeftElement.innerHTML = this.movesLeft;
+                    break;
+                case "ArrowDown":
+                    this.y += 1
+                    this.movesLeft--;
+                    dice.movesLeftElement.innerHTML = this.movesLeft;
+                    break;
+                case "ArrowLeft":
+                    this.x -= 1
+                    this.movesLeft--;
+                    dice.movesLeftElement.innerHTML = this.movesLeft;
+                    break;
+                case "ArrowRight":
+                    this.x += 1
+                    this.movesLeft--;
+                    dice.movesLeftElement.innerHTML = this.movesLeft;
+                    break;
+            }
 
-
+            if (this.movesLeft === 1 || this.movesLeft === 0){
+               dice.diceButton.style.visibility = "visible";
+   
+           }
+        } 
+        /*
+        dice.randomNum--;
+        console.log(`Moves left: ${this.movesLeft}`);
+        } else {
+            console.log("No more moves left!");
+        }*/
         this.checkForBoundaries()
         this.updatePlayerPosition();
         this.burntTest()
         this.collectFurniture();
     }
+
+
+
 
     checkForBoundaries() {
         if (this.x <= 0) {
@@ -66,28 +89,32 @@ class Player {
     burntTest() {
         newGame.lavaArray.forEach((lava) => {
 
-        if (this.x === lava.x && this.y === lava.y) {
-            console.log("BUUUUUUUUUURN")
-            newGame.lives -= 1;
-            newGame.updateLives();
-        }
+            if (this.x === lava.x && this.y === lava.y) {
+                console.log("BUUUUUUUUUURN")
+                newGame.lives -= 1;
+                newGame.updateLives();
+            }
 
         });
     }
-    collectFurniture(){
+    collectFurniture() {
         newGame.furnitureArray.forEach((furniture) => {
 
             if (this.x === furniture.x && this.y === furniture.y) {
                 console.log("SAVED!!")
-;               newGame.furniturePieces ++
+                    ; newGame.furniturePieces++
                 furniture.furniture.remove();
                 const Index = newGame.furnitureArray.indexOf(furniture);
 
                 newGame.furnitureArray.splice(Index, 1);
             }
-  
+            if (newGame.furnitureArray.length === 0){
+                youWonToast.style.visibility = "visible";
+            }
 
-            });
+
+        });
     }
+
 
 }

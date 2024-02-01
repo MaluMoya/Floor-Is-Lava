@@ -34,4 +34,6 @@ class Furniture {
         console.log(array[randomPositionY][randomPositionX].hasChildNodes());
         return array[randomPositionY][randomPositionX].hasChildNodes();
     }
+    
+
 }

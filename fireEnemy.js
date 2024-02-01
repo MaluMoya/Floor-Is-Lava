@@ -20,9 +20,10 @@ class Lava {
 
 
         //While loop que funciona con condiciones. Mientras suceda esto, vamos a cambiar random position.
-        while (randomPositionX === 0 && randomPositionY === 0 || randomPositionX === 1 && randomPositionY === 0 || randomPositionX === 0 && randomPositionY === 1) {
+        while (randomPositionX === 0 && randomPositionY === 0 || randomPositionX === 1 && randomPositionY === 0 || randomPositionX === 0 && randomPositionY === 1 || this.cellFull(randomPositionX, randomPositionY)) {
             randomPositionX = Math.floor(Math.random() * (this.xMax))
             randomPositionY = Math.floor(Math.random() * (this.yMax))
+
         }
 
         //Si no tenemos definidas estas propiedades en el constructor, js lo va a crear:
@@ -30,6 +31,8 @@ class Lava {
         this.y = randomPositionY
 
     }
-        
-    
+    cellFull(randomPositionX, randomPositionY) {
+        console.log(array[randomPositionY][randomPositionX].hasChildNodes());
+        return array[randomPositionY][randomPositionX].hasChildNodes();
+    }
 }

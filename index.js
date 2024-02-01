@@ -4,7 +4,10 @@ console.log ("Index Js is working!")
 
 //DIV BOARD
 let divGameBoard = document.getElementById ("div-board");
-
+let gameOverToast = document.getElementById("game-over");
+let youWonToast = document.getElementById("you-won");
+let refreshButtonLoser = document.querySelector('#restart-game-lose');
+let refreshButtonWinner = document.querySelector('#restart-game-won');
 //Game variables:
 
 //DICE: 
@@ -13,7 +16,7 @@ dice.clickStart()
 dice.clickDice();
 
 //NEW GAME: 
-let newGame ;
+let newGame;
 
 /*--------------------------------- FUNCTIONS ---------------------------------*/
 
@@ -56,40 +59,22 @@ function addGrid (){
 
 addGrid();
 
-/*
-let gameOver = false;
+const refreshPageLoser = () => {
+    location.reload();
+  }
+  
+refreshButtonLoser.addEventListener('click', refreshPageLoser)
 
-function gameLoop() {
-    if (!newGame.gameOver) {
-
-
-        /*
-        game.player.crashTest()
-        if (game.frames % enemyCreationFrame === 0) {
-            game.enemies.push(new Enemy(enemyVelocity));
-            console.log(game.enemies);
-        }
-        if (game.frames % scoreIncrementFrame === 0) {
-            game.score++;
-            game.updateScore();
-        }
-        game.enemies.forEach((enemy) => {
-            enemy.move()
-            enemy.checkForBoundaries()
-        })
-
-    } else {
-        newGame.player.playerElement.remove();
-        //endView.style.display = "flex"; // We can set it to flex or block
-    }
-}
-
-gameLoop(); 
-*/
-
+const refreshPageWinner = () => {
+    location.reload();
+  }
+  
+refreshButtonWinner.addEventListener('click', refreshPageWinner)
 
 
 /*--------------------------------- EVENT-LISTENERS ---------------------------------*/
+
+
 
 
 document.addEventListener("keydown", (event) => {
