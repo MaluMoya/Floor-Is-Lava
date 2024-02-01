@@ -1,6 +1,6 @@
 class Dice {
     constructor() {
-        this.counter = 3;
+        this.counter = 10;
 
         //Esto solo se ejecuta cuando empieza el juego:
         this.counterDice = this.randomDice();
@@ -9,6 +9,7 @@ class Dice {
         this.diceButton = document.getElementById("throw-dice");
         this.divTitle = document.getElementById("div-title");
         this.movesLeftElement = document.querySelector("#remaining-moves");
+        this.musicSound = new Audio('./Assets/sounds/warp_drive.mp3');
 
 
 
@@ -27,6 +28,7 @@ class Dice {
     clickStart() {
         console.log("Start button pressed");
         this.startButton.onclick = () => {
+            this.musicSound.play();
             this.startCountdown();
             newGame = new Game(3);
         };
@@ -43,11 +45,13 @@ class Dice {
 
             } else {
                 newGame.gameOver = true
+                this.musicSound.pause();
                 gameOverToast.style.visibility = "visible";
                 clearInterval(intervalId)
                 this.startButton.style.visibility = "visible";
                 this.counter = 10;
                 this.divTime.innerHTML = this.counter;
+
                 //showToast(divMessage)
             }
             this.counter--;

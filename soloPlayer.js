@@ -52,11 +52,11 @@ class Player {
                     break;
             }
 
-            if (this.movesLeft === 1 || this.movesLeft === 0){
-               dice.diceButton.style.visibility = "visible";
-   
-           }
-        } 
+            if (this.movesLeft === 1 || this.movesLeft === 0) {
+                dice.diceButton.style.visibility = "visible";
+
+            }
+        }
         /*
         dice.randomNum--;
         console.log(`Moves left: ${this.movesLeft}`);
@@ -91,9 +91,25 @@ class Player {
 
             if (this.x === lava.x && this.y === lava.y) {
                 console.log("BUUUUUUUUUURN")
+                // Increase the count of collected furniture pieces
+                newGame.lavaEnemies++;
+
+            // Remove the collected furniture from the game
+                lava.lava.remove();
+
+            // Find the index of the collected furniture in the furnitureArray
+                const Index = newGame.lavaArray.indexOf(lava);
+
+            // Remove the collected furniture from the furnitureArray
+                newGame.lavaArray.splice(Index, 1);
+
+
+                let lavaSound = new Audio('./Assets/sounds/lava.flac');
+                lavaSound.play();
                 newGame.lives -= 1;
                 newGame.updateLives();
             }
+
 
         });
     }
@@ -102,14 +118,17 @@ class Player {
 
             if (this.x === furniture.x && this.y === furniture.y) {
                 console.log("SAVED!!")
-                    ; newGame.furniturePieces++
+                newGame.furniturePieces++
                 furniture.furniture.remove();
                 const Index = newGame.furnitureArray.indexOf(furniture);
 
                 newGame.furnitureArray.splice(Index, 1);
             }
-            if (newGame.furnitureArray.length === 0){
+            if (newGame.furnitureArray.length === 0) {
+                let winningSound = new Audio('./Assets/sounds/winningSong.mp3');
+                winningSound.play();
                 youWonToast.style.visibility = "visible";
+
             }
 
 
