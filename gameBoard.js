@@ -20,6 +20,7 @@ class Game {
         document.getElementById("lives").innerText = this.lives;
         if (this.lives <= 0) {
             this.gameOver = true;
+            dice.musicSound.pause();
             gameOverToast.style.visibility = "visible";
         }
     }

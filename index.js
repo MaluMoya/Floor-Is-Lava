@@ -76,11 +76,22 @@ refreshButtonWinner.addEventListener('click', refreshPageWinner)
 
 
 
-
+//arrows:
 document.addEventListener("keydown", (event) => {
     console.log(event);
     if (!newGame.gameOver) {
         newGame.player.move(event.key);
+    }
+})
+
+//space bar:
+document.addEventListener("keydown", (event) => {
+    console.log(event);
+    if (!newGame.gameOver && event.key === " ") {
+        const number = dice.randomDice();
+        dice.counterDice = number
+
+        dice.remainingMoves() 
     }
 })
 

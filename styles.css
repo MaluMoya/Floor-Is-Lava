@@ -12,7 +12,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: black;
+    background-color: #0F0F0F;
 
 }
 
@@ -22,14 +22,15 @@ body {
 #game-view {
     /*If we want to make child elements absolute, we need to set it to relative*/
     position: relative;
-    width: 80%;
+    width: 100%;
     height: 100vh;
     display: grid;
     gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    background: url("./Assets/images/lavaBackground.jpeg");
-
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    background: url("./Assets/images/background.png");
+    background-size: cover;
+    padding-top: 100px;
     border: none;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,7 +41,6 @@ body {
 /*------------------------- GRID PLACEMENT ------------------------------*/
 
 .div {
-    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -48,46 +48,36 @@ body {
 
 
 #div-title {
-    display: flex;
-    flex-direction: column;
-    margin-top: 30px;
-    margin-left: 30px;
-    padding: 10px 20px;
+    margin: 0 120px 0 40px;
+    padding: 10px 70px;
     /*Same as grid column: span 2*/
-    grid-column-start: span 2;
-    grid-column-end: auto; 
+    grid-area: 1 / 1 / 2 / 4;
+}
 
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#start {
+    margin: 100px, 30px, 20px, 40px;
+    padding: 10px 70px;
+    /*Same as grid column: span 2*/
+    grid-area:  2 / 3 / 3 / 5;
 }
 
 #div-button {
-    margin-left: 30px;
-    margin-bottom: 30px;
-    grid-area: 2 / 1 / 4 / 3;
+    margin: 100px, 30px, 30px, 0;
+    grid-area: 3 / 3 / 4 / 5;
     order: 1;
     display: flex;
     flex-direction: column;
-
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: brown;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #div-information {
-    margin: 30px;
+    width: 200px;
+    height: 150px;
+    margin: 0 0 0 50px;
+    padding: 10px 0 0 20px;
     grid-area: 1 / 3 / 2 / 5;
     display: flex;
     flex-direction: column;
-
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
 
     color: #F2ECBE;
     font-family: Rancho;
@@ -98,31 +88,31 @@ body {
 #div-board {
     display: grid;
     grid-template: repeat(8, 1fr) / repeat(8, 1fr);
-    margin: 0px 30px 30px 0;
-    grid-area: 2 / 3 / 4 / 5;
-    background-color: #F2ECBE;
+    margin: 0 10px 0 80px;
+    padding: 200px 150px;
+    grid-area: 1 / 1 / 4 / 3; 
+
     gap: 1px;
 
 }
 
+
+
 /*--------------------------- ELEMENTS 1st DIV ----------------------------*/
 
 #title {
+    padding: 0;
     text-align: center;
     font-family: Rancho;
-    font-size: 80px;
+    font-size: 90px;
 }
-#div-title p {
-    font-family: 'Maven Pro', sans-serif;
-    font-size: 20px;
-    width: 150px;
-    height: 30px;
-}
+
 
 /*------------------------ ELEMENTS 2nd DIV - DICE ----------------------------*/
 
 .img1 {
     width: 20%;
+    margin: 0 300px 30px 0;
     
 }
 
@@ -132,7 +122,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin: 30px;
+    margin: 30px 300px 0 0;
     background-color: brown;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -145,8 +135,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    margin: 0 auto;
-    margin-top: 20px;
+    margin: 0 300px 80px 0;
     background-color: brown;
     color: white;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -169,19 +158,34 @@ body {
 }
 
 .white {
-    background-color: #9A3B3B;
+    background-color: #5D3D43;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
 }
 
 .black {
-    background-color: #C08261;
+    background-color: #C88D7A;
+    background-size: cover;
+    width: 50px;
+    height: 50px;
 }
 
 
 #player {
     
-    background-color: green;
-    width: 10px;
-    height: 10px;
+    background: url("./Assets/images/player.gif");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+
+}
+#playerBoiling {
+    
+    background: url("./Assets/images/boiling.gif");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
 
 }
 
@@ -197,9 +201,11 @@ body {
 
 .furniture {
     
-    background-color: blue;
-    width: 10px;
-    height: 10px;
+    background: url("./Assets/images/wood.png");
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+
 
 }
 
@@ -215,9 +221,9 @@ body {
     width: 50%;
     height: 40%;
 
-    background: url("./Assets/images/gameOver.gif");
+    background: url("./Assets/images/gameOver.png");
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
 
     position: absolute;
     /*This 2 properties are meant for positioning:*/
@@ -245,7 +251,11 @@ body {
     flex-direction: column;
     width: 50%;
     height: 40%;
-    background: url("./Assets/images/lavaWinning.gif");
+
+    background: url("./Assets/images/saved.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
     position: absolute;
     /*This 2 properties are meant for positioning:*/
     top: 25%;
