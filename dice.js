@@ -9,7 +9,7 @@ class Dice {
         this.diceButton = document.getElementById("throw-dice");
         this.divTitle = document.getElementById("div-title");
         this.movesLeftElement = document.querySelector("#remaining-moves");
-        this.musicSound = new Audio('./Assets/sounds/warp_drive.mp3');
+        this.musicSound = new Audio('./Assets/sounds/chase.mp3');
 
 
 
@@ -46,6 +46,7 @@ class Dice {
             } else {
                 newGame.gameOver = true
                 this.musicSound.pause();
+
                 gameOverToast.style.visibility = "visible";
                 clearInterval(intervalId)
                 this.startButton.style.visibility = "visible";

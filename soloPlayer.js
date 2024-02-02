@@ -9,22 +9,53 @@ class Player {
         this.yMax = 7;
         this.movesLeft = 0;
         this.element = document.querySelector("#player");
+
+
     }
 
     updatePlayerPosition() {
         const playerElement = document.getElementById("player")
+
         //We delete the element and create a new one. 
         //Kill it and create a clone:
         if (playerElement) {
             playerElement.remove();
+
         }
+
         let player = document.createElement("div");
         player.id = "player";
         array[this.y][this.x].appendChild(player);
+
+        
         //create enemy with array [random]
         //if enemey position === furnitur
 
     }
+    /*
+    updatePlayerBoiling() {
+        const playerBoilingElement = document.getElementById("playerBoiling");
+        
+        // Remove existing playerBoiling element
+        if (playerBoilingElement) {
+            playerBoilingElement.remove();
+        }
+    
+        let playerBoiling = document.createElement("div");
+        playerBoiling.id = "playerBoiling";
+        array[this.y][this.x].appendChild(playerBoiling);
+
+        if (playerBoiling) {
+            playerBoiling.remove();
+        }
+
+
+
+        
+        //create enemy with array [random]
+        //if enemey position === furnitur
+
+    }*/
     move(direction) {
 
         if (this.movesLeft > 0) {
@@ -64,8 +95,8 @@ class Player {
             console.log("No more moves left!");
         }*/
         this.checkForBoundaries()
-        this.updatePlayerPosition();
         this.burntTest()
+        this.updatePlayerPosition();
         this.collectFurniture();
     }
 
@@ -103,12 +134,15 @@ class Player {
             // Remove the collected furniture from the furnitureArray
                 newGame.lavaArray.splice(Index, 1);
 
+                
+                //this.updatePlayerBoiling()
+                let lavaSound = new Audio('./Assets/sounds/flame.ogg');
 
-                let lavaSound = new Audio('./Assets/sounds/lava.flac');
                 lavaSound.play();
                 newGame.lives -= 1;
                 newGame.updateLives();
             }
+
 
 
         });
