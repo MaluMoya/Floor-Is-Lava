@@ -12,7 +12,7 @@ Timer that controls a countdown.
 Dice that controls the amount of movements of the player.
 Remaining moves count to keep track of the rolling dice.
 
-![alt text](http://url/to/.Assets/images/sketch.jpg)
+![alt text](./Assets/images/sketch.jpg)
 
 
 ## Stack we use
