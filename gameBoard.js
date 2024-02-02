@@ -9,7 +9,7 @@ class Game {
         this.gameOver = false;  //start the game with gameover false 
         this.lives = lives;        //set lives and difficulty
         this.difficulty = 1;
-        this.lavaEnemies = 3;        //set number of lavas and furniture
+        this.lavaEnemies = 12;        //set number of lavas and furniture
         this.furniturePieces = 3;
         this.spawnLava();         //Spawn (Poner huevos) lava and furniture 
         this.spawnFurniture();
